@@ -15,26 +15,42 @@ function checkApi(e) {
         if (data.length > 10) {
             console.log('Too many matches found. Please enter a more specific name.');
         }
+        else if
+            (data.value.toString() === userInput.toString()){
+                let li = document.createElement('li');
+                li.style.listStyleType = "none";
+                li.style.display = "flex"; 
+                li.style.alignItems = "center";
+
+                let img = document.createElement('img');
+                img.style.display = "flex";
+                img.style.height = '30px';
+                img.style.width = '40px';
+                img.style.marginRight = "10px";
+                img.src = item.flags.svg;
+        
+                li.innerHTML = `<p> ${data.value} </p>`; 
+                li.prepend(img);
+                countryList.append(li);
+            }
+        
         else if (data.length > 1 && data.length <= 10) {
             data.forEach(item => {
                 let li = document.createElement('li');
                 li.style.listStyleType = "none";
                 li.style.display = "flex"; 
                 li.style.alignItems = "center";
+
                 let img = document.createElement('img');
                 img.style.display = "flex";
                 img.style.height = '30px';
                 img.style.width = '40px';
                 img.style.marginRight = "10px";
-                img.src = item.flags.svg
-                li.innerHTML =
-                    `
-                <p> ${item.name.common} </p>
+                img.src = item.flags.svg;
 
-                `; 
+        li.innerHTML = `<p> ${item.name.common} </p>`; 
                 li.prepend(img);
                 countryList.append(li);
-                
             });
             
         } else if (data.length === 1) {
