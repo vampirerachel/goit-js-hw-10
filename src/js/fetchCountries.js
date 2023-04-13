@@ -8,3 +8,5 @@ return fetch(`${BASE_URL}${name}${options}`).then((response) => {
     return response.json();
 });
 }
+
+console.log(fetchCountries('Sweden'))

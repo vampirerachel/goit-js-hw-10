@@ -1,13 +1,12 @@
-import './css/styles.css';
-import API from './js/fetchCountries'
+import '../css/styles.css';
+import { API } from './fetchCountries'
 const DEBOUNCE_DELAY = 300;
 const inputEl = document.querySelector("#search-box")
 const countryList = document.querySelector(".country-list")
 const countryInfoEl = document.querySelector(".country-info")
 
 
-
-function checkApi(e) {
+const handleInput = function checkApi(e) {
 
     const userInput = e.target.value.trim();
     
@@ -79,7 +78,7 @@ function checkApi(e) {
 }
 //TODO we need to debounce our addEventListener for every 300ms
 
-inputEl.addEventListener('input', checkApi); 
+inputEl.addEventListener('input', handleInput); 
 
 
     
