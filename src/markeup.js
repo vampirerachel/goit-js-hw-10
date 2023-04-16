@@ -18,8 +18,8 @@
         `};
 
 export         function onShowCountryList({ flags, name }) {return `
-        <li style="display:flex;  margin-bottom: 15px;">
-        <img style="margin-right: 15px" src="${flags.svg}" alt="${name.official}" width=50/>
+        <li style="display:flex;  margin-bottom: 15px; align-items: center;">
+        <img style="margin-right: 15px;" src="${flags.svg}" alt="${name.official}" width=50 height=60/>
         <h2>${name.official}</h2>
         </li>
         `;}
